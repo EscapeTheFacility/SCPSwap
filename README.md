@@ -1,4 +1,6 @@
-﻿# SCPSwap
+![GitHub all releases](https://img.shields.io/github/downloads/EscapeTheFacility/SCPSwap/total)
+
+# SCPSwap
 This is a port of the SCPSwap plugin by DentyTxR (and BuildBoy12) to NWAPI. Most of the code has been taken from the original repo.
 Currently the CustomSwaps API has been removed due to issues while loading, it will be reinplemented in the future.
 
