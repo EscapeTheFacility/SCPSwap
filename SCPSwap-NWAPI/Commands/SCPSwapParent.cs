@@ -41,7 +41,7 @@ namespace SCPSwap_NWAPI.Commands
                 return false;
             }
 
-            if (Round.Duration.Seconds > Plugin.Instance.Config.SwapTimeout)
+            if (Round.Duration > TimeSpan.FromSeconds(Plugin.Instance.Config.SwapTimeout))
             {
                 response = "The swap period has ended.";
                 return false;
@@ -53,7 +53,7 @@ namespace SCPSwap_NWAPI.Commands
                 return false;
             }
 
-            if (!playerSender.IsSCP)
+            if (playerSender.Team != Team.SCPs)
             {
                 response = "You must be an SCP to use this command.";
                 return false;

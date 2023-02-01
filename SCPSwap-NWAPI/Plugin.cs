@@ -1,4 +1,5 @@
-﻿using MEC;
+﻿using System;
+using MEC;
 using PlayerRoles;
 using PluginAPI.Core;
 using PluginAPI.Core.Attributes;
@@ -35,7 +36,7 @@ namespace SCPSwap_NWAPI
         void OnPlayerChangeRole(Player player, PlayerRoleBase oldRole, RoleTypeId newRole, RoleChangeReason reason)
         {
             if (oldRole.Team == Team.SCPs) return;
-            if (newRole.GetTeam() == Team.SCPs && Round.Duration.Seconds < Config.SwapTimeout)
+            if (newRole.GetTeam() == Team.SCPs && Round.Duration < TimeSpan.FromSeconds(Config.SwapTimeout))
                 player.SendBroadcast(Messages.StartMessage.Message, Messages.StartMessage.Duration);
         }
 
