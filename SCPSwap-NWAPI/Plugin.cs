@@ -1,5 +1,6 @@
 ﻿using System;
 using MEC;
+using NWAPIPermissionSystem;
 using PlayerRoles;
 using PluginAPI.Core;
 using PluginAPI.Core.Attributes;
@@ -35,8 +36,9 @@ namespace SCPSwap_NWAPI
         [PluginEvent(ServerEventType.PlayerChangeRole)]
         void OnPlayerChangeRole(Player player, PlayerRoleBase oldRole, RoleTypeId newRole, RoleChangeReason reason)
         {
+            if (!player.CheckPermission("scpswap.swap")) return;
             if (oldRole.Team == Team.SCPs) return;
-            if (newRole.GetTeam() == Team.SCPs && Round.Duration < TimeSpan.FromSeconds(Config.SwapTimeout))
+            if (newRole.GetTeam() == Team.SCPs && Round.Duration < TimeSpan.FromSeconds(Config.SwapTimeout) && !Config.BlacklistedScps.Contains(newRole))
                 player.SendBroadcast(Messages.StartMessage.Message, Messages.StartMessage.Duration);
         }
 

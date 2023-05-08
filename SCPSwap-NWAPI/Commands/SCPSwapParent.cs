@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using CommandSystem;
+using NWAPIPermissionSystem;
 using PluginAPI.Core;
 using PlayerRoles;
 using SCPSwap_NWAPI.Models;
@@ -41,6 +42,12 @@ namespace SCPSwap_NWAPI.Commands
                 return false;
             }
 
+            if (!playerSender.CheckPermission("scpswap.swap"))
+            {
+                response = "You do not have access to this command.";
+                return false;
+            }
+
             if (Round.Duration > TimeSpan.FromSeconds(Plugin.Instance.Config.SwapTimeout))
             {
                 response = "The swap period has ended.";
@@ -59,6 +66,12 @@ namespace SCPSwap_NWAPI.Commands
                 return false;
             }
 
+            if (Plugin.Instance.Config.BlacklistedScps.Contains(playerSender.Role))
+            {
+                response = "You cannot swap as this SCP.";
+                return false;
+            }
+
             if (Swap.FromSender(playerSender) != null)
             {
                 response = "You already have a pending swap request!";
@@ -72,20 +85,25 @@ namespace SCPSwap_NWAPI.Commands
                 return false;
             }
 
-            if (receiver != null)
-            {
-                Swap.Send(playerSender, receiver);
-                response = "Request sent!";
-                return true;
-            }
-
             if (spawnMethod == null)
             {
                 response = "Unable to find the specified role. Please refer to the list command for available roles.";
                 return false;
             }
-
-            if (Plugin.Instance.Config.AllowNewScps)
+            
+            if (receiver != null)
+            {
+                if (Plugin.Instance.Config.BlacklistedScps.Contains(receiver.Role))
+                {
+                    response = "You cannot swap to this SCP.";
+                    return false;
+                }
+                Swap.Send(playerSender, receiver);
+                response = "Request sent!";
+                return true;
+            }
+            
+            if (playerSender.CheckPermission("scpswap.any"))
             {
                 spawnMethod(playerSender);
                 response = "Swap successful.";

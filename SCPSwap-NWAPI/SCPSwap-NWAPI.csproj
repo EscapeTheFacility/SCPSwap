@@ -48,6 +48,9 @@
         <Reference Include="NorthwoodLib">
           <HintPath>..\..\_Dependencies\EXILED-ServerDeps\12.0.2-Exiled.beta-25\NorthwoodLib.dll</HintPath>
         </Reference>
+        <Reference Include="NWAPIPermissionSystem">
+          <HintPath>..\..\_Dependencies\NWapi\NWAPIPermissionSystem.dll</HintPath>
+        </Reference>
         <Reference Include="PluginAPI, Version=12.0.0.0, Culture=neutral, processorArchitecture=Amd64">
           <HintPath>..\packages\Northwood.PluginAPI.12.0.0\lib\net48\PluginAPI.dll</HintPath>
         </Reference>
