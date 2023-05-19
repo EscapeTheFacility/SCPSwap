@@ -11,6 +11,11 @@ DentyTxR's version of the plugin (for EXILED) can be found [here](https://github
 - Configuration on allowed swap roles, timings and messages
 - <s>API to allow other plugins to integrate into the swap feature</s>
 
+## Permissions
+This plugin requires NWPS permissions to function, it is shipped as a dependency.
+- `scpswap.swap` to allow swapping.
+- `scpswap.swap` AND `scpswap.any` to allow swapping to new SCPs.
+
 ## Default configuration
 ```yaml
 is_enabled: true
@@ -19,8 +24,6 @@ debug: false
 request_timeout: 20
 # The duration, in seconds, after the round starts that swap requests can be sent.
 swap_timeout: 60
-# Indicates whether a player can switch to a class if there is nobody playing as it.
-allow_new_scps: true
 # A collection of roles blacklisted from being swapped to.
 blacklisted_scps:
 - Scp0492
