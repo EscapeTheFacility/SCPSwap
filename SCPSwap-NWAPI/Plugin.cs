@@ -19,7 +19,7 @@ namespace SCPSwap_NWAPI
         public Messages Messages;
         public static Plugin Instance { get; private set; }
         
-        [PluginEntryPoint("SCPSwap", "1.0.1", "Allows SCPs to swap with other SCPs at the start of the match.", "ThijsNameIsTaken, DentyTxR and BuildBoy12")]
+        [PluginEntryPoint("SCPSwap", "1.0.2", "Allows SCPs to swap with other SCPs at the start of the match.", "ThijsNameIsTaken, DentyTxR and BuildBoy12")]
         void OnEnabled()
         {
             if (!Config.IsEnabled) return;
@@ -36,6 +36,7 @@ namespace SCPSwap_NWAPI
         [PluginEvent(ServerEventType.PlayerChangeRole)]
         void OnPlayerChangeRole(Player player, PlayerRoleBase oldRole, RoleTypeId newRole, RoleChangeReason reason)
         {
+            if (player == null) return;
             if (!player.CheckPermission("scpswap.swap")) return;
             if (oldRole.Team == Team.SCPs) return;
             if (newRole.GetTeam() == Team.SCPs && Round.Duration < TimeSpan.FromSeconds(Config.SwapTimeout) && !Config.BlacklistedScps.Contains(newRole))
