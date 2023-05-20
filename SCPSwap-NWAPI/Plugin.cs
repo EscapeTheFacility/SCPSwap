@@ -36,7 +36,7 @@ namespace SCPSwap_NWAPI
         [PluginEvent(ServerEventType.PlayerChangeRole)]
         void OnPlayerChangeRole(Player player, PlayerRoleBase oldRole, RoleTypeId newRole, RoleChangeReason reason)
         {
-            if (player == null) return;
+            if (player == null || reason == RoleChangeReason.Destroyed) return;
             if (!player.CheckPermission("scpswap.swap")) return;
             if (oldRole.Team == Team.SCPs) return;
             if (newRole.GetTeam() == Team.SCPs && Round.Duration < TimeSpan.FromSeconds(Config.SwapTimeout) && !Config.BlacklistedScps.Contains(newRole))
