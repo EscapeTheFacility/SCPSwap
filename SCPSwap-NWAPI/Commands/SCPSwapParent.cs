@@ -4,6 +4,7 @@ using CommandSystem;
 using NWAPIPermissionSystem;
 using PluginAPI.Core;
 using PlayerRoles;
+using RemoteAdmin;
 using SCPSwap_NWAPI.Models;
 
 namespace SCPSwap_NWAPI.Commands
@@ -29,8 +30,8 @@ namespace SCPSwap_NWAPI.Commands
         
         protected override bool ExecuteParent(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {
-            Player playerSender = Player.Get(sender);
-            if (playerSender == null)
+            Player player = Player.Get((PlayerCommandSender)sender);
+            if (player == null)
             {
                 response = "This command must be executed at the game level.";
                 return false;
@@ -42,7 +43,7 @@ namespace SCPSwap_NWAPI.Commands
                 return false;
             }
 
-            if (!playerSender.CheckPermission("scpswap.swap"))
+            if (!player.CheckPermission("scpswap.swap"))
             {
                 response = "You do not have access to this command.";
                 return false;
@@ -60,26 +61,26 @@ namespace SCPSwap_NWAPI.Commands
                 return false;
             }
 
-            if (playerSender.Team != Team.SCPs)
+            if (player.Team != Team.SCPs)
             {
                 response = "You must be an SCP to use this command.";
                 return false;
             }
 
-            if (Plugin.Instance.Config.BlacklistedScps.Contains(playerSender.Role))
+            if (Plugin.Instance.Config.BlacklistedScps.Contains(player.Role))
             {
                 response = "You cannot swap as this SCP.";
                 return false;
             }
 
-            if (Swap.FromSender(playerSender) != null)
+            if (Swap.FromSender(player) != null)
             {
                 response = "You already have a pending swap request!";
                 return false;
             }
 
             Player receiver = GetReceiver(arguments.At(0), out Action<Player> spawnMethod);
-            if (playerSender == receiver)
+            if (player == receiver)
             {
                 response = "You can't swap with yourself.";
                 return false;
@@ -98,14 +99,14 @@ namespace SCPSwap_NWAPI.Commands
                     response = "You cannot swap to this SCP.";
                     return false;
                 }
-                Swap.Send(playerSender, receiver);
+                Swap.Send(player, receiver);
                 response = "Request sent!";
                 return true;
             }
             
-            if (playerSender.CheckPermission("scpswap.any"))
+            if (player.CheckPermission("scpswap.any"))
             {
-                spawnMethod(playerSender);
+                spawnMethod(player);
                 response = "Swap successful.";
                 return true;
             }
