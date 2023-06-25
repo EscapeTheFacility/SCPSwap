@@ -34,10 +34,10 @@
     </PropertyGroup>
     <ItemGroup>
         <Reference Include="Assembly-CSharp">
-          <HintPath>..\..\_Dependencies\EXILED-ServerDeps\12.0.2-Exiled.beta-25\Assembly-CSharp-Publicized.dll</HintPath>
+          <HintPath>..\..\_Dependencies\Base\13.1\Assembly-CSharp-Publicized.dll</HintPath>
         </Reference>
         <Reference Include="Assembly-CSharp-firstpass">
-          <HintPath>..\..\_Dependencies\EXILED-ServerDeps\12.0.2-Exiled.beta-25\Assembly-CSharp-firstpass.dll</HintPath>
+          <HintPath>..\..\_Dependencies\Base\13.1\Assembly-CSharp-firstpass.dll</HintPath>
         </Reference>
         <Reference Include="CommandSystem.Core">
           <HintPath>..\..\_Dependencies\EXILED-ServerDeps\12.0.2-Exiled.beta-25\CommandSystem.Core.dll</HintPath>
@@ -49,10 +49,10 @@
           <HintPath>..\..\_Dependencies\EXILED-ServerDeps\12.0.2-Exiled.beta-25\NorthwoodLib.dll</HintPath>
         </Reference>
         <Reference Include="NWAPIPermissionSystem">
-          <HintPath>..\..\_Dependencies\NWapi\NWAPIPermissionSystem.dll</HintPath>
+          <HintPath>..\..\_Dependencies\NWapi\NWAPIPermissionSystem-0.0.4.dll</HintPath>
         </Reference>
-        <Reference Include="PluginAPI, Version=12.0.0.0, Culture=neutral, processorArchitecture=Amd64">
-          <HintPath>..\packages\Northwood.PluginAPI.12.0.0\lib\net48\PluginAPI.dll</HintPath>
+        <Reference Include="PluginAPI">
+          <HintPath>..\..\_Dependencies\Base\13.1\PluginAPI.dll</HintPath>
         </Reference>
         <Reference Include="System" />
         <Reference Include="System.Core" />
