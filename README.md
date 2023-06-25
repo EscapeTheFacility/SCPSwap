@@ -1,6 +1,6 @@
 # SCPSwap ![Latest release](https://img.shields.io/github/v/release/EscapeTheFacility/SCPSwap) ![Downloads](https://img.shields.io/github/downloads/EscapeTheFacility/SCPSwap/total) 
 This is a port of the SCPSwap plugin by DentyTxR (and BuildBoy12) to NWAPI. Most of the code has been taken from the original repo.
-Currently the CustomSwaps API has been removed due to issues while loading, it will be reinplemented in the future.
+Currently the CustomSwaps API has been removed. It will be re-added in the future.
 
 DentyTxR's version of the plugin (for EXILED) can be found [here](https://github.com/DentyTxR/ScpSwap).
 
@@ -10,7 +10,8 @@ DentyTxR's version of the plugin (for EXILED) can be found [here](https://github
 - <s>API to allow other plugins to integrate into the swap feature</s>
 
 ## Permissions
-This plugin requires NWPS permissions to function, it is shipped as a dependency.
+This plugin requires NWPS permissions to function, you can download it [here](https://github.com/CedModV2/NWAPIPermissionSystem/releases).
+**Do not install it as a depencency, install it as a plugin.**
 - `scpswap.swap` to allow swapping.
 - `scpswap.swap` AND `scpswap.any` to allow swapping to new SCPs.
 
