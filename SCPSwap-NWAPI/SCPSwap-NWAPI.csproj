@@ -34,35 +34,35 @@
     </PropertyGroup>
     <ItemGroup>
         <Reference Include="Assembly-CSharp">
-          <HintPath>..\..\_Dependencies\Base\13.1\Assembly-CSharp-Publicized.dll</HintPath>
+          <HintPath>..\..\_Dependencies\Base\13.2 (pluginapi-beta)\Assembly-CSharp-Publicized.dll</HintPath>
         </Reference>
         <Reference Include="Assembly-CSharp-firstpass">
-          <HintPath>..\..\_Dependencies\Base\13.1\Assembly-CSharp-firstpass.dll</HintPath>
+          <HintPath>..\..\_Dependencies\Base\13.2 (pluginapi-beta)\Assembly-CSharp-firstpass.dll</HintPath>
         </Reference>
         <Reference Include="CommandSystem.Core">
-          <HintPath>..\..\_Dependencies\EXILED-ServerDeps\12.0.2-Exiled.beta-25\CommandSystem.Core.dll</HintPath>
+          <HintPath>..\..\_Dependencies\Base\13.2 (pluginapi-beta)\CommandSystem.Core.dll</HintPath>
         </Reference>
         <Reference Include="Mirror">
-          <HintPath>..\..\_Dependencies\EXILED-ServerDeps\12.0.2-Exiled.beta-25\Mirror.dll</HintPath>
+          <HintPath>..\..\_Dependencies\Base\13.2 (pluginapi-beta)\Mirror.dll</HintPath>
         </Reference>
         <Reference Include="NorthwoodLib">
-          <HintPath>..\..\_Dependencies\EXILED-ServerDeps\12.0.2-Exiled.beta-25\NorthwoodLib.dll</HintPath>
+          <HintPath>..\..\_Dependencies\Base\13.2 (pluginapi-beta)\NorthwoodLib.dll</HintPath>
         </Reference>
         <Reference Include="NWAPIPermissionSystem">
-          <HintPath>..\..\_Dependencies\NWapi\NWAPIPermissionSystem-0.0.4.dll</HintPath>
+          <HintPath>..\..\_Dependencies\NWapi\NWAPIPermissionSystem-0.0.5.dll</HintPath>
         </Reference>
         <Reference Include="PluginAPI">
-          <HintPath>..\..\_Dependencies\Base\13.1\PluginAPI.dll</HintPath>
+          <HintPath>..\..\_Dependencies\Base\13.2 (pluginapi-beta)\PluginAPI.dll</HintPath>
         </Reference>
         <Reference Include="System" />
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
         <Reference Include="System.Xml" />
         <Reference Include="UnityEngine.CoreModule">
-          <HintPath>..\..\_Dependencies\EXILED-ServerDeps\12.0.2-Exiled.beta-25\UnityEngine.CoreModule.dll</HintPath>
+          <HintPath>..\..\_Dependencies\Base\13.2 (pluginapi-beta)\UnityEngine.CoreModule.dll</HintPath>
         </Reference>
-        <Reference Include="YamlDotNet, Version=11.0.0.0, Culture=neutral, PublicKeyToken=ec19458f3c15af5e, processorArchitecture=MSIL">
-          <HintPath>..\packages\YamlDotNet.11.0.1\lib\net45\YamlDotNet.dll</HintPath>
+        <Reference Include="YamlDotNet">
+          <HintPath>..\..\_Dependencies\Base\13.2 (pluginapi-beta)\YamlDotNet.dll</HintPath>
         </Reference>
     </ItemGroup>
     <ItemGroup>
