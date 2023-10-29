@@ -19,7 +19,7 @@ namespace SCPSwap_NWAPI
         public Messages Messages;
         public static Plugin Instance { get; private set; }
         
-        [PluginEntryPoint("SCPSwap", "1.2.0", "Allows SCPs to swap with other SCPs at the start of the match.", "ThijsNameIsTaken, DentyTxR and BuildBoy12")]
+        [PluginEntryPoint("SCPSwap", "1.3.0", "Allows SCPs to swap with other SCPs at the start of the match.", "ThijsNameIsTaken, DentyTxR and BuildBoy12")]
         void OnEnabled()
         {
             if (!Config.IsEnabled) return;
