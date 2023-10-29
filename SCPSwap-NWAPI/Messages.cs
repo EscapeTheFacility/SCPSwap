@@ -28,6 +28,8 @@ namespace SCPSwap_NWAPI
             { "0492", RoleTypeId.Scp0492 },
             { "492", RoleTypeId.Scp0492 },
             { "zombie", RoleTypeId.Scp0492 },
+            { "3114", RoleTypeId.Scp3114 },
+            { "skeleton", RoleTypeId.Scp3114 }
         };
 
         [Description("The message to be displayed to all Scp subjects at the start of the round.")]
