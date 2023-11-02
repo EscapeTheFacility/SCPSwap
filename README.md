@@ -50,6 +50,9 @@ translatable_swaps:
   0492: Scp0492
   492: Scp0492
   zombie: Scp0492
+  3114: Scp3114
+  skeleton: Scp3114
+  skinwalker: Scp3114
 # The message to be displayed to all Scp subjects at the start of the round.
 start_message:
   message: <color=yellow><b>Did you know you can swap classes with other SCP's?</b></color> Simply type <color=orange>.scpswap (role number)</color> in your in-game console (not RA) to swap!
